@@ -7,6 +7,9 @@ config.py
 #Ignore chromedriver
 chromedriver.exe
 sample_dog_data.csv
+new_sample_dog_data.csv
+breed_count_weight.csv
+borough_count.csv
 config.js
 
 
