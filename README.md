@@ -32,9 +32,16 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+### Circle Pack
 
-Explain how to run the automated tests for this system
+#### Prerequisites
+Data must be in the proper format to be able to parse it for the visualization.
+
+#### Steps
+1. Set variables for width, height and data
+2. SVG: Append using d3 while setting the width and height attributes set a variable
+3. G Group: Select using d3 and append 'g'
+4. Get data from the csv.
 
 ### Break down into end to end tests
 
