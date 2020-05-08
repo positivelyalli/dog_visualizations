@@ -37,12 +37,70 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dog Breed Visualization</a>
+            </li>
+            <li class="nav-item dropdown" id="view-by">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  View
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#licenses" value="view-license">Licenses</a>
+                  <a class="dropdown-item" href="#weight"  value="view-weight">Weight</a>
+                  <a class="dropdown-item" href="#life_exp"  value="view-life-exp">Life Span</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Filter
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Foundation Stock Service</a>
+                  <a class="dropdown-item" href="#">Herding</a>
+                  <a class="dropdown-item" href="#">Hound</a>
+                  <a class="dropdown-item" href="#">Miscellaneous</a>
+                  <a class="dropdown-item" href="#">Mixed</a>
+                  <a class="dropdown-item" href="#">Non-Sporting</a>
+                  <a class="dropdown-item" href="#">Sporting</a>
+                  <a class="dropdown-item" href="#">Terrier</a>
+                  <a class="dropdown-item" href="#">Toy</a>
+                  <a class="dropdown-item" href="#">Unknown</a>
+                  <a class="dropdown-item" href="#">Working</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Show All</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Borough Visualization</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Data</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
   <div class="container">
-    <div class="row">
+    <!--<div class="row">
       <div class="col-md-12 col-md-12">
-        <h1 class = "header">D3 2017 Popular Dog Breeds in NY</h1>
+        <h1 class = "header"></h1>
+         D3 2017 Dog Breeds in NY 
       </div>
-    </div>
+    </div>-->
     <div class="row">
       <div class="col-md-12  col-md-9">
         <div id="circle_chart">
@@ -52,19 +110,15 @@
     </div>
     <div class="row">
       <div class="col-md-12  col-md-9">
-        <div class="article">
-          <h2>Popular Dog Breeds by Weight and Life Expectancy </h2>
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-            quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-            ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <div class="article" id="Chart_desc">
+          <h2>New York Dog Breeds and Licenses </h2>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;This circle pack chart shows the hierarchy of the dog breeds grouped by AKC dog breed groups with the circle 
+            radius being driven by the number of licenses in the New York City area. The most interesting, but not surprising
+            information, is that the toy group has the largest number of licenses followed by the mixed breed group.
+            The largest single breed is unknown or mutts where the owner didn’t know the heritage of the dog. Mutts have 10,383 licenses issued. 
+            More than twice as many as the next highest breed, Yorshire Terrier, with 4,929. Shitzu, Chihuahua, and Maltese are also a large 
+            portion of the licenses issued. 
+          </p>
         </div>
       </div>
     </div>
