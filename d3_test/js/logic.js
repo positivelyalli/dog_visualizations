@@ -52,7 +52,22 @@ d3.select("#view-by").selectAll('div').selectAll('a')
 
         // @global vData
         updateViz(vData, view);
+        updateText(view);
     });
+
+d3.select("#filter").selectAll('div').selectAll('a')
+.on('click', function (d) {
+    // get the value from the HTML element
+    var view = this.getAttribute('value');
+
+    // test debug functions to see what comes into the function
+    console.log("View:" + view);
+
+    // @global vData
+    filterViz(vData, view);
+    updateText(view);
+});
+
 
 function updateViz(vData, view) {
     console.info('updateViz', arguments);
@@ -148,23 +163,37 @@ function updateText(view) {
     // Select view {}
     if (view === "view-life-exp") {
         // put new header and paragraph here
-        d3.selectAll("h2").text("New York Dog Breeds and Life Expectancy");
+        d3.selectAll("h2").text("New York Dog Breeds and Life Span");
         d3.selectAll("p")
-            .text("&nbsp;&nbsp;&nbsp;&nbsp;This circle pack chart shows the hierarchy of the dog breeds grouped by AKC dog breed groups with the circle"
+            .text(" The life span view shows the lack of variability in life span for dogs. There are outliers of course," 
+            + "like the Fila Brasiliero Breed with an average life span of 7.5 years and the Chihuahua which has the longest" 
+            + "life span with an average life span of 17.5 years. Overall the average life span for a dog is about 12.2 years" 
+            + "and the life span for 80% of the breed groups is between 12 - 13.5 years. The similar shape and size of the circles," 
+            + "lack of variability, is what makes it interesting.");
+    }
+    else if (view === "view-weight") {
+        // put new header and paragraph here
+        d3.selectAll("h2").text("New York Dog Breeds and Weight");
+        d3.selectAll("p")
+            .text("Viewing weight as the circle radius shows how most breeds and breed"
+            + "groups have a similar lifespan.  There is some variability but not as much when compared to license count."
+            + "Within each dog breed group there is also a fair amount of variability such as the Working dog group which can weigh" 
+            + "as little as 35 pounds and as much as 175 pounds. This view allows a potential buyer to see the average weight of a"
+            + "dog breed or dog breed group and make a better decision.");
+    }
+    else if (view === "view-license") {
+        // put new header and paragraph here
+        d3.selectAll("h2").text("New York Dog Breeds and Licenses");
+        d3.selectAll("p")
+            .text("This circle pack chart shows the hierarchy of the dog breeds grouped by AKC dog breed groups with the circle"
             + "radius being driven by the number of licenses in the New York City area. The most interesting, but not surprising"
             + "information, is that the toy group has the largest number of licenses followed by the mixed breed group."
             + "The largest single breed is unknown or mutts where the owner didn’t know the heritage of the dog. Mutts have 10,383 licenses issued." 
             + "More than twice as many as the next highest breed, Yorshire Terrier, with 4,929. Shitzu, Chihuahua, and Maltese are also a large" 
-            + "portion of the licenses issued. ")
-    }
-    else if (view === "view-weight") {
-        // put new header and paragraph here
-    }
-    else if (view === "view-license") {
-        // put new header and paragraph here
+            + "portion of the licenses issued. ");
     } 
     else {
-        console.log("View type missing")
+        console.log("View type missing");
     };
 
 }
