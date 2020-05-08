@@ -78,7 +78,7 @@ function updateViz(vData, view) {
 
     //end
     var vNodes = vRoot.descendants();
-    vLayout(vRoot);
+    vLayout(vRoot); 
     g.selectAll('circle').remove();
     var vSlices = g.selectAll('circle').data(vNodes).enter().append('circle');
 
@@ -137,5 +137,35 @@ function selectBreedInfo(d) {
     textblock.append("text")
         .text(d => "Average Weight: " + d.data.data.avgweight + "lbs.")
         .attr("y", "88");
+    
+    textblock.append("text")
+        .text(d => "Average Life Span:" + d.data.data.lifeexpectancy + " years")
+        .attr("y", "110");
+}
+
+function updateText(view) {
+        // Layout + Data
+    // Select view {}
+    if (view === "view-life-exp") {
+        // put new header and paragraph here
+        d3.selectAll("h2").text("New York Dog Breeds and Life Expectancy");
+        d3.selectAll("p")
+            .text("&nbsp;&nbsp;&nbsp;&nbsp;This circle pack chart shows the hierarchy of the dog breeds grouped by AKC dog breed groups with the circle"
+            + "radius being driven by the number of licenses in the New York City area. The most interesting, but not surprising"
+            + "information, is that the toy group has the largest number of licenses followed by the mixed breed group."
+            + "The largest single breed is unknown or mutts where the owner didn’t know the heritage of the dog. Mutts have 10,383 licenses issued." 
+            + "More than twice as many as the next highest breed, Yorshire Terrier, with 4,929. Shitzu, Chihuahua, and Maltese are also a large" 
+            + "portion of the licenses issued. ")
+    }
+    else if (view === "view-weight") {
+        // put new header and paragraph here
+    }
+    else if (view === "view-license") {
+        // put new header and paragraph here
+    } 
+    else {
+        console.log("View type missing")
+    };
+
 }
 
