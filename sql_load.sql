@@ -81,13 +81,14 @@ LIMIT 999999999
 
 -- Create Breed Weight View 
 
-DROP VIEW IF EXISTS breed_count_weight
+DROP VIEW IF EXISTS breed_count_weight_life
 ;
 
-CREATE VIEW breed_count_weight AS
+CREATE VIEW breed_count_weight_life AS
 
 	SELECT sub1.*,
-	sub3.avgweight
+	sub3.avgweight,
+	sub3.avglife AS "lifeexpectancy"
 	FROM (
 		SELECT NULL AS "breedgroup",
 		'Dog' AS "breedname",
@@ -96,92 +97,11 @@ CREATE VIEW breed_count_weight AS
 	) sub1
 	LEFT JOIN (
 		SELECT 'Dog' AS "breedname",
-		AVG(sub2.avgweight) AS "avgweight"
-		FROM (
-			SELECT bbgr.BreedGroup,
-			AVG(bs.AvgWeight) AS "avgweight"
-			FROM breed_stats bs
-			JOIN breed_breed_group_relationship bbgr
-			ON bs.BreedName = bbgr.BreedName
-			GROUP BY bbgr.BreedGroup
-		) sub2
-	) sub3
-	ON sub1.breedname = sub3.breedname
-
-	UNION ALL
-	SELECT sub3.*
-	FROM (
-		SELECT sub1.*,
-		sub2.avgweight
-		FROM (
-			SELECT 'Dog',
-			bbgr.BreedGroup,
-			COUNT(lr.BreedName)
-			FROM license_records lr
-			JOIN breed_breed_group_relationship bbgr
-			ON lr.BreedName = bbgr.BreedName
-			GROUP BY bbgr.BreedGroup
-		) sub1
-		LEFT JOIN (
-			SELECT bbgr.BreedGroup,
-			AVG(bs.AvgWeight) AS "avgweight"
-			FROM breed_stats bs
-			JOIN breed_breed_group_relationship bbgr
-			ON bs.BreedName = bbgr.BreedName
-			GROUP BY bbgr.BreedGroup
-		) sub2
-		ON sub1.BreedGroup = sub2.BreedGroup
-		ORDER BY sub1.BreedGroup
-	) sub3
-
-	UNION ALL
-	SELECT *
-	FROM (
-		SELECT bbgr.BreedGroup,
-		sub2.BreedName,
-		sub2.licensecount,
-		bs.AvgWeight
-		FROM (
-			SELECT lr.BreedName,
-			COUNT(lr.id) AS "licensecount"
-			FROM license_records lr
-			GROUP BY lr.BreedName
-		) sub2
-		JOIN breed_breed_group_relationship bbgr
-		ON sub2.BreedName = bbgr.BreedName
-		LEFT JOIN breed_stats bs
-		ON sub2.BreedName = bs.BreedName
-		ORDER BY bbgr.BreedGroup ASC, sub2.BreedName ASC
-	) sub3
-;
-
-SELECT *
-FROM breed_count_weight
-LIMIT 999999999
-;
-
-
-
--- Create Breed Life View 
-
-DROP VIEW IF EXISTS breed_count_life
-;
-
-CREATE VIEW breed_count_life AS
-
-	SELECT sub1.*,
-	sub3.avglife
-	FROM (
-		SELECT NULL AS "breedgroup",
-		'Dog' AS "breedname",
-		COUNT(lr.*) AS "licensecount"
-		FROM license_records lr
-	) sub1
-	LEFT JOIN (
-		SELECT 'Dog' AS "breedname",
+		AVG(sub2.avgweight) AS "avgweight",
 		AVG(sub2.avglife) AS "avglife"
 		FROM (
 			SELECT bbgr.BreedGroup,
+			AVG(bs.AvgWeight) AS "avgweight",
 			AVG(bs.AvgLife) AS "avglife"
 			FROM breed_stats bs
 			JOIN breed_breed_group_relationship bbgr
@@ -195,7 +115,8 @@ CREATE VIEW breed_count_life AS
 	SELECT sub3.*
 	FROM (
 		SELECT sub1.*,
-		sub2.avglife
+		sub2.avgweight,
+		sub2.avglife AS "lifeexpectancy"
 		FROM (
 			SELECT 'Dog',
 			bbgr.BreedGroup,
@@ -207,6 +128,7 @@ CREATE VIEW breed_count_life AS
 		) sub1
 		LEFT JOIN (
 			SELECT bbgr.BreedGroup,
+			AVG(bs.AvgWeight) AS "avgweight",
 			AVG(bs.AvgLife) AS "avglife"
 			FROM breed_stats bs
 			JOIN breed_breed_group_relationship bbgr
@@ -223,7 +145,8 @@ CREATE VIEW breed_count_life AS
 		SELECT bbgr.BreedGroup,
 		sub2.BreedName,
 		sub2.licensecount,
-		bs.AvgLife
+		bs.AvgWeight,
+		bs.AvgLife AS "lifeexpectancy"
 		FROM (
 			SELECT lr.BreedName,
 			COUNT(lr.id) AS "licensecount"
@@ -239,7 +162,7 @@ CREATE VIEW breed_count_life AS
 ;
 
 SELECT *
-FROM breed_count_life
+FROM breed_count_weight_life
 LIMIT 999999999
 ;
 
