@@ -1,6 +1,7 @@
 var vWidth = 960;
 var vHeight = 500;
 var vData = {};
+var view;
 
 // Prepare our physical space
 var svg = d3.select("#circle_chart")
@@ -24,7 +25,8 @@ function fetchDogData() {
 
         vData = stratify(dogData);
 
-        updateViz(vData, "view-license");
+        view = "view-license";
+        updateViz(vData, view);
     });
 }
 
@@ -45,7 +47,7 @@ fetchDogData();
 d3.select("#view-by").selectAll('div').selectAll('a')
     .on('click', function (d) {
         // get the value from the HTML element
-        var view = this.getAttribute('value');
+        view = this.getAttribute('value');
 
         // test debug functions to see what comes into the function
         console.log("View:" + view);
@@ -55,19 +57,39 @@ d3.select("#view-by").selectAll('div').selectAll('a')
         updateText(view);
     });
 
-d3.select("#filter").selectAll('div').selectAll('a')
+function getFilteredData(vData, filter) {
+    // filters the metadaa based on the id from the dropdown
+    var filteredData;
+    if (filter === "Show All") {
+        
+        filteredData = vData;
+
+    } else {
+
+        filteredData= vData.children.find(({id}) => id === filter);
+
+    }
+    // vData.children.filter(function (group) {
+    //     return group.children.data.id === filter; // there is an id that is an integer and one is a string
+    // });
+    console.log("FilteredData: ", filteredData);
+    return filteredData;
+}
+
+d3.select("#group_filter").selectAll('div').selectAll('a')
 .on('click', function (d) {
     // get the value from the HTML element
     var filter = this.getAttribute('value');
 
     // test debug functions to see what comes into the function
-    console.log("Filter:" + filter);
+    console.log("Filter:", filter);
+
+    var filteredData = getFilteredData(vData, filter);
 
     // // @global vData
-    // filterViz(vData, view);
+    updateViz(filteredData, view);
     // updateText(view);
 });
-
 
 function updateViz(vData, view) {
     console.info('updateViz', arguments);
