@@ -186,7 +186,7 @@ function updateText(view) {
     if (view === "view-life-exp") {
         // put new header and paragraph here
         d3.selectAll("h2").text("New York Dog Breeds and Life Span");
-        d3.selectAll("p")
+        d3.select("p")
             .text(" The life span view shows the lack of variability in life span for dogs. There are outliers of course," 
             + "like the Fila Brasiliero Breed with an average life span of 7.5 years and the Chihuahua which has the longest" 
             + "life span with an average life span of 17.5 years. Overall the average life span for a dog is about 12.2 years" 
@@ -196,7 +196,7 @@ function updateText(view) {
     else if (view === "view-weight") {
         // put new header and paragraph here
         d3.selectAll("h2").text("New York Dog Breeds and Weight");
-        d3.selectAll("p")
+        d3.select("p")
             .text("Viewing weight as the circle radius shows how most breeds and breed"
             + "groups have a similar lifespan.  There is some variability but not as much when compared to license count."
             + "Within each dog breed group there is also a fair amount of variability such as the Working dog group which can weigh" 
@@ -206,7 +206,7 @@ function updateText(view) {
     else if (view === "view-license") {
         // put new header and paragraph here
         d3.selectAll("h2").text("New York Dog Breeds and Licenses");
-        d3.selectAll("p")
+        d3.select("p")
             .text("This circle pack chart shows the hierarchy of the dog breeds grouped by AKC dog breed groups with the circle"
             + "radius being driven by the number of licenses in the New York City area. The most interesting, but not surprising"
             + "information, is that the toy group has the largest number of licenses followed by the mixed breed group."
