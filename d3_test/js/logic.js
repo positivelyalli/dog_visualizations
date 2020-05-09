@@ -58,14 +58,14 @@ d3.select("#view-by").selectAll('div').selectAll('a')
 d3.select("#filter").selectAll('div').selectAll('a')
 .on('click', function (d) {
     // get the value from the HTML element
-    var view = this.getAttribute('value');
+    var filter = this.getAttribute('value');
 
     // test debug functions to see what comes into the function
-    console.log("View:" + view);
+    console.log("Filter:" + filter);
 
-    // @global vData
-    filterViz(vData, view);
-    updateText(view);
+    // // @global vData
+    // filterViz(vData, view);
+    // updateText(view);
 });
 
 
