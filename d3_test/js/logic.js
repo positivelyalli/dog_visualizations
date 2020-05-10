@@ -2,6 +2,8 @@ var vWidth = 960;
 var vHeight = 500;
 var vData = {};
 var view;
+var filter;
+var filteredData = {};
 
 // Prepare our physical space
 var svg = d3.select("#circle_chart")
@@ -29,8 +31,99 @@ function fetchDogData() {
         updateViz(vData, view);
     });
 }
+// Fetch data from json file
+function fetchJsonDogData() {
+    d3.json('/d3_test/data/breed_count_weight_life.json').then(function (dogData) {
+        
+        console.log("dogData", dogData);
 
-fetchDogData();
+        childColumn = dogData.breedname;
+        console.log("dogData.breedname: ", dogData.breedname);
+
+        parentColumn = dogData.breedgroup;
+        console.log("dogData.breedgroup: ", dogData.breedgroup);
+
+        // var stratify = d3.stratify()
+        //     .id(d => d[childColumn])
+        //     .parentId(d => d[parentColumn]);
+
+        // vData = stratify(dogData);
+
+        // view = "view-license";
+        // updateViz(vData, view);
+    });
+}
+
+/***
+ * unpacks JSON formats in column form
+ * {
+ *      'col1':{
+ *          '1':'value1',
+ *          '2':'value2',
+ *          '...':'value...'
+ *      },
+ *      'col2':{
+ *          '1':'value1',
+ *          '2':'value2',
+ *          '...':'value...'
+ *      },
+ * }
+ * 
+ * @returns rows
+ * 
+ */
+function unpackJsonColumns(data, rows){
+    console.log('unpackJsonColumns', data);
+    var columnLength = [];
+    var rows = rows || [];
+
+    
+    Object.entries(data).forEach(entries => {
+        var colValues, colName;
+
+        colName = entries[0];
+        colValues = Object.entries(entries[1]);             // cast dictionary / array as array of entries
+        columnLength.push(colValues.length);
+
+        colValues.forEach((value, index, array) => {
+            rows[index] = rows[index] || {};
+            rows[index][colName] = value[1];
+            // console.log('unpackJsonColumns', rows[index]);
+        });
+
+    });
+
+    // Checks to see if the columns are the same length
+    if ( Math.min(...columnLength) !== Math.max(...columnLength) ){
+        console.error('unpackJsonColumns', 'Column Length does not match');
+    }
+
+    // console.log('unpackJsonColumns', 'return', rows.length, rows);
+
+    return rows;
+}
+
+function testUJC(){
+    d3.json('/d3_test/data/breed_count_weight_life.json').then(function (dogData) {
+        var upData = unpackJsonColumns(dogData);
+        console.log('upData', upData);
+
+        // childColumn = upData.breedname;
+        // parentColumn = upData.breedgroup;
+
+        var stratify = d3.stratify()
+            .id(d => d.breedname)
+            .parentId(d => d.breedgroup);
+
+        vData = stratify(upData);
+
+        view = "view-license";
+        updateViz(vData, view);
+    });
+};
+testUJC();
+
+// fetchJsonDogData();
 
 // $('#view-by .dropdown-item').on('click', function(e){
 //     // test debug functions to see what comes into the function
@@ -55,6 +148,11 @@ d3.select("#view-by").selectAll('div').selectAll('a')
         // @global vData
         updateViz(vData, view);
         updateText(view);
+        insertView(view)
+
+        //take away the text box for breed selection
+        svg.selectAll("#details-popup").remove();
+
     });
 
 function getFilteredData(vData, filter) {
@@ -89,7 +187,24 @@ d3.select("#group_filter").selectAll('div').selectAll('a')
     // // @global vData
     updateViz(filteredData, view);
     // updateText(view);
+    insertFilterInfo(filter);
+
+    //take away the text box for breed selection
+    svg.selectAll("#details-popup").remove();
 });
+
+// search
+// d3.select("button").on("click", function(d) {
+//     //get the input from the search form
+//     var textInfo = d3.select("#textInfo").node.input;
+//     if (vData.children.find(({id}) => id === textInfo)) {
+//        circles.style("fill", "#FF1A6C") 
+//     }
+    
+//     else {
+//         console.log("couldn't find what you are looking for")
+//     }
+// })
 
 function updateViz(vData, view) {
     console.info('updateViz', arguments);
@@ -172,16 +287,18 @@ function selectBreedInfo(d) {
     //     .attr("y", "48");
 
     textblock.append("text")
-        .text(d => "Average Weight: " + d.data.data.avgweight + "lbs.")
+        .text(d => "Average Weight: " + d.data.data.avgweight.toFixed(2) + " lbs.")
         .attr("y", "88");
     
     textblock.append("text")
-        .text(d => "Average Life Span:" + d.data.data.lifeexpectancy + " years")
+        .text(d => "Average Life Span:" + d.data.data.lifeexpectancy.toFixed(2) + " years")
         .attr("y", "110");
 }
 
 function updateText(view) {
-        // Layout + Data
+    // take away the filter text
+    d3.select("h4").text("")
+
     // Select view {}
     if (view === "view-life-exp") {
         // put new header and paragraph here
@@ -220,3 +337,27 @@ function updateText(view) {
 
 }
 
+function insertFilterInfo(filter) {
+    d3.select("h4").text("Breed Group Filter: " + filter);
+}
+
+function insertView(view) {
+    
+    // Select view {}
+    if (view === "view-life-exp") {
+        // put new header and paragraph here
+        d3.select("h3").text("View: Life Span");
+    }
+    else if (view === "view-weight") {
+        // put new header and paragraph here
+        d3.select("h3").text("View: Weight");
+    }
+    else if (view === "view-license") {
+        // put new header and paragraph here
+        d3.select("h3").text("View: Licenses");
+    } 
+    else {
+        console.log("View type missing");
+    };
+
+}
