@@ -1,0 +1,12 @@
+.navbar .navbar-brand {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: turquoise;
+    border-radius: 5px;
+    margin-left: 30px;
+    padding: 15px;
+}
+.navbar-nav li {
+    margin-right: 25px;
+}
