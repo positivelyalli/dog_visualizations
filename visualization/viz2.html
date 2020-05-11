@@ -40,7 +40,7 @@
  <!--Create Navigation Bar-->
  <!--Create Navigation Bar-->
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="../homepage.html">Home</a>
+  <a class="navbar-brand" href="../index.html">Home</a>
   
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -48,7 +48,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="alli-index.html">Dog Breed Visualization</a>
+        <a class="nav-link" href="index-alli.html">Dog Breed Visualization</a>
       </li>
     
       <li class="nav-item">
@@ -58,35 +58,43 @@
           <a class="nav-link" href="(data_page)bootstrap-table.html">Data Table</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Foundation Stock Service</a>
-            <a class="dropdown-item" href="#">Herding</a>
-            <a class="dropdown-item" href="#">Hound</a>
-            <a class="dropdown-item" href="#">Miscellaneous</a>
-            <a class="dropdown-item" href="#">Mixed</a>
-            <a class="dropdown-item" href="#">Non-Sporting</a>
-            <a class="dropdown-item" href="#">Sporting</a>
-            <a class="dropdown-item" href="#">Terrier</a>
-            <a class="dropdown-item" href="#">Toy</a>
-            <a class="dropdown-item" href="#">Unknown</a>
-            <a class="dropdown-item" href="#">Working</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Dog Breed by Weight</a>
-            <a class="dropdown-item" href="#">Dog Breed by Life Expectancy</a>
-          </div>
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
+<div class="container">
+  <!--<div class="row">
+    <div class="col-md-12 col-md-12">
+      <h1 class = "header"></h1>
+       D3 2017 Dog Breeds in NY 
+    </div>
+  </div>-->
+  <div class="row">
+    <div class="col-md-12  col-md-9">
+      <div id="choropleth">
+        <img src='chart_images/dog_chart_2.png'>
+        <!-- We append our chart here. -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12  col-md-9">
+      <div class="article" id="Chart_desc">
+        <h2>Dogs per New York Borough </h2>
+        <p id="chart_paragraph">&nbsp;&nbsp;&nbsp;&nbsp;The boroughs of New York City are constantly fighting for bragging rights over which one has the tastiest pizza, 
+          most influential culture, best sports fans, and much more. So how do they stack up against each other in terms of dog-friendliness?  
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <img src='chart_images/dog_chart_2.png'>
+<!-- Footer-->
+<div id="footer">
+  <p>Made for Data Analytics Boot Camp&copy;2020</p>
+</div>
+
+<script type="text/javascript" src="d3_test/js/logic.js"></script>
 </body>
 
 </html>

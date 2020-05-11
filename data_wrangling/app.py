@@ -4,6 +4,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 # Database
 engine = create_engine('sqlite:///dog_data.sqlite')
@@ -17,6 +18,7 @@ Stats = Base.classes.breed_stats
 
 # Flask setup
 app = Flask(__name__)
+cors = CORS(app)
 
 ### Flask routes
 # Home

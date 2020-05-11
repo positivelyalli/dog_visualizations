@@ -14,27 +14,28 @@ var svg = d3.select("#circle_chart")
 var g = d3.select('#circle_chart svg')
     .append("g");
 
-// Get the data from our CSV file
-function fetchDogData() {
-    d3.csv('/d3_test/data/updated_breed_count_weight.csv').then(function (dogData, error) {
-        if (error) throw error;
-        childColumn = dogData.columns[1];
-        parentColumn = dogData.columns[0];
+// // Get the data from our CSV file
+// function fetchDogData() {
+//     d3.csv('/d3_test/data/updated_breed_count_weight.csv').then(function (dogData, error) {
+//         if (error) throw error;
+//         childColumn = dogData.columns[1];
+//         parentColumn = dogData.columns[0];
 
-        var stratify = d3.stratify()
-            .id(d => d[childColumn])
-            .parentId(d => d[parentColumn]);
+//         var stratify = d3.stratify()
+//             .id(d => d[childColumn])
+//             .parentId(d => d[parentColumn]);
 
-        vData = stratify(dogData);
+//         vData = stratify(dogData);
 
-        view = "view-license";
-        updateViz(vData, view);
-    });
-}
+//         view = "view-license";
+//         updateViz(vData, view);
+//     });
+// }
 // Fetch data from json file
 function fetchJsonDogData() {
     //alternate d3.json('http://127.0.0.1:5000/breed_count_weight_life').then(function (dogData) {
-    d3.json('/d3_test/data/breed_count_weight_life.json').then(function (dogData) {
+    //d3.json('/d3_test/data/breed_count_weight_life.json').then(function (dogData) {
+    d3.json('http://127.0.0.1:5000/breed_count_weight_life').then(function (dogData) {
         
         console.log("dogData", dogData);
         
@@ -42,7 +43,7 @@ function fetchJsonDogData() {
         childColumn = dogData.breedname;
         console.log("dogData.breedname: ", dogData.breedname);
         
-        // Assign the child relationship to the data
+        // Assign the parent relationship to the data
         parentColumn = dogData.breedgroup;
         console.log("dogData.breedgroup: ", dogData.breedgroup);
 
@@ -98,10 +99,10 @@ function unpackJsonColumns(data, rows){
     return rows;
 }
 
-function testUJC(){
-    d3.json('/d3_test/data/breed_count_weight_life.json').then(function (dogData) {
-        var upData = unpackJsonColumns(dogData);
-        console.log('upData', upData);
+function getDogData(){
+    d3.json('http://127.0.0.1:5000/breed_count_weight_life').then(function (dogData) {
+        // var upData = unpackJsonColumns(dogData);
+        console.log('dogData', dogData);
 
         // childColumn = upData.breedname;
         // parentColumn = upData.breedgroup;
@@ -110,13 +111,16 @@ function testUJC(){
             .id(d => d.breedname)
             .parentId(d => d.breedgroup);
 
-        vData = stratify(upData);
+        vData = stratify(dogData);
 
         view = "view-license";
         updateViz(vData, view);
     });
 };
-testUJC();
+
+getDogData();
+
+
 
 // fetchJsonDogData();
 

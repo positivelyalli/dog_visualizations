@@ -24,6 +24,10 @@ padding-left: 60px;
   padding: 60px;
 }
 
+#choropleth {
+  padding: 60px;
+}
+
 /* .details-popup {
   font-family: sans-serif;
   font-size: 20px;

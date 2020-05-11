@@ -2,131 +2,153 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>2016 Popular Dog Breeds in NY</title>
-    <script 
-    src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
-    crossorigin="anonymous"></script>
-    <script 
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
-    crossorigin="anonymous"></script>
 
-    <link 
-    rel="stylesheet" 
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-    crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script 
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+  crossorigin="anonymous"></script>
+  <script 
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+  crossorigin="anonymous"></script>
 
-    <script 
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
-    crossorigin="anonymous"></script>
+  <link 
+  rel="stylesheet" 
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+  crossorigin="anonymous">
 
-    <script src="https://d3js.org/d3.v5.js"
-    crossorigin="anonymous"></script>
+  <script 
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+  crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.0/d3-tip.js"
-    crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.js"
+  crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="d3_test/css/style.css">
-    <link rel="stylesheet" href="d3_test/css/d3Style.css">
-</head>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.0/d3-tip.js"
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="static/CSS/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
+ <!--Create Navigation Bar-->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">Home</a>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li> -->
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="#">Dog Breed Visualization</a>
-            </li>
-            <li class="nav-item dropdown" id="view-by">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  View
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#licenses" value="view-license">Licenses</a>
-                  <a class="dropdown-item" href="#weight"  value="view-weight">Weight</a>
-                  <a class="dropdown-item" href="#life_exp"  value="view-life-exp">Life Span</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown" id="group_filter">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Filter
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" value="Foundation Stock Service">Foundation Stock Service</a>
-                  <a class="dropdown-item" value="Herding">Herding</a>
-                  <a class="dropdown-item" value="Hound">Hound</a>
-                  <a class="dropdown-item" value="Miscellaneous">Miscellaneous</a>
-                  <a class="dropdown-item" value="Mixed">Mixed</a>
-                  <a class="dropdown-item" value="Non-Sporting">Non-Sporting</a>
-                  <a class="dropdown-item" value="Sporting">Sporting</a>
-                  <a class="dropdown-item" value="Terrier">Terrier</a>
-                  <a class="dropdown-item" value="Toy">Toy</a>
-                  <a class="dropdown-item" value="Unknown">Unknown</a>
-                  <a class="dropdown-item" value="Working">Working</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" value="Show All">Show All</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Borough Visualization</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Data</a>
-              </li>
-          </ul>
-        </div>
-      </nav>
+      <li class="nav-item">
+        <a class="nav-link" href="visualization/index-alli.html">Dog Breed Visualization</a>
+      </li>
+   
+      <li class="nav-item">
+          <a class="nav-link" href="visualization/viz2.html">Borough Visualization</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="visualization/(data_page)bootstrap-table.html">Data Table</a>
+        </li>
+       
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+  <!-- any weird symbols here such as &gt; or &lt; are HTML escape characters. http://www.theukwebdesigncompany.com/articles/entity-escape-characters.php -->
+  <!-- these allow us to do things like write escaped HTML, or HTML that just gets rendered as text in the document -->
+  <h1>Dogs of New York</h1>
+  
+  
+  <div id="imageCarousel" class="carousel slide" data-rude="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#imageCarousel" data-slide-to="1" ></li>
+      <li data-target="#imageCarousel" data-slide-to="2" ></li>
+      <li data-target="#imageCarousel" data-slide-to="3" ></li>
+    </ol> 
+    <div class="carousel-inner" id="innerC">
+      <div class="item active">
+        <img src="./static/images/dog_image_1.jpg" width="200" height="200" style ="display: block; margin-left: auto; margin-right: auto;" alt="Doggo 1">
+      </div>
+      <div class="item">
+        <img src="./static/images/dog_image_2.jpg" width="200" height="200"  style ="display: block; margin-left: auto; margin-right: auto;" alt="Doggo 2">
+      </div>
+      <div class="item">
+        <img src="./static/images/dog_image_3.jpg" width="200" height="200" style ="display: block; margin-left: auto; margin-right: auto;"  alt="Doggo 3">
+      </div>
+      <div class="item">
+        <img src="./static/images/dog_image_4.jpg" width="200" height="200" style ="display: block; margin-left: auto; margin-right: auto;"  alt="Doggo 4">
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#imageCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous Slide</span>
+    </a>
+    <a class="right carousel-control" href="#imageCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next Slide</span>
+    </a>
+  </div>
+
+  <div class="container article" >
+    <div>
+      <p>
+        Welcome to The Real Housedogs of New York webpage! In these potentially 
+        
+        melancholy and certainly uncertain times, we believe man’s best and most
+        loyal companions – dogs – can bring a little extra joy to our days. 
+        Our site is filled with amazing information on dog breeds and how well 
+        each breed is represented in New York City. Which breeds are the most 
+        popular among urbanites? Which borough can stake a claim as the most 
+        dog-friendly of the bunch? Check out our amazing visualizations to 
+        find out!
+        </p>
+
+        <p>
+              Creators’ Note: This site was submitted to UC Berkeley Extension Data Analytics
+            Bootcamp as our data visualization project. The goal was to create an interactive 
+            dashboard page with multiple charts using JavaScript that updates from the 
+            same SQLite database. Circle Packing and Leaflet’s Choropleth Map are the 
+            primary drivers of the visualizations. 
+            Please click around and enjoy!
+
+         <br><br>- Alli, Brad, Jason, & Richard 
+          <hr>
+        </p>
+    </div>
+</div>
+    
   <div class="container">
-    <!--<div class="row">
-      <div class="col-md-12 col-md-12">
-        <h1 class = "header"></h1>
-         D3 2017 Dog Breeds in NY 
-      </div>
-    </div>-->
     <div class="row">
-      <div class="col-md-12  col-md-9">
-        <div id="circle_chart">
-          <h3></h3>
-          <h4></h4>
-          <!-- We append our chart here. -->
-        </div>
+      <div class="col-sm-12 col-md-6">
+        <h4>Dog Breed Circle Pack Visualization </h4>
+        
+        <a href = "visualization/index-alli.html"><img src='visualization/chart_images/circle_pack.png' width="400" height="250"></a>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <h4>Borough Dog Count Choropleth</h4>
+
+        <a href = "visualization/viz2.html"><img src='visualization/chart_images/dog_chart_2.png' width="200" height="200"></a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12  col-md-9">
-        <div class="article" id="Chart_desc">
-          <h2>New York Dog Breeds and Licenses </h2>
-          <p id="chart_paragraph">&nbsp;&nbsp;&nbsp;&nbsp;Viewing weight as the circle radius shows how most breeds and breed 
-            groups have a similar lifespan.  There is some variability but not as much when compared to license count. 
-            Within each dog breed group there is also a fair amount of variability such as the Working dog group which can weigh 
-            as little as 35 pounds and as much as 175 pounds. This view allows a potential buyer to see the average weight of a 
-            dog breed or dog breed group and make a better decision. 
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer-->
-  <div id="footer">
-    <p>Made for Data Analytics Boot Camp&copy;2020</p>
-  </div>
-
-  <script type="text/javascript" src="d3_test/js/logic.js"></script>
+  </div>  
 
 </body>
 
