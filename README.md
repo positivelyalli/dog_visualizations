@@ -57,6 +57,7 @@ See: create_sqlite_db.py, dog_data.sqlite
 
 Flask<br>
 Originally, the tables were used to create two views that could be exported as CSVs and used by the team. On recommendation from the teacher, we changed our approach to make the view-like data accessible via a flask.<br>
+
 See: app.py
 =======
 
