@@ -41,7 +41,8 @@ Data must be in the proper format to be able to parse it for the visualization.
 1. Set variables for width, height and data
 2. SVG: Append using d3 while setting the width and height attributes set a variable
 3. G Group: Select using d3 and append 'g'
-4. Get data from the csv.
+4. Get data from the source: csv, json, API.
+5. Pass the data to stratify which creates heirarchies in the data.
 
 =======
 ### Data Wrangling
@@ -76,7 +77,6 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Bootstrap](link to download here) - The web framework used
-* [Fuzzball](link to download here) - Package for fuzzy search
 * [D3.js](link to download here) - Used to create visualizations
 
 
