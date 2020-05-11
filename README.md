@@ -84,8 +84,8 @@ Add additional notes about how to deploy this on a live system
 ## Authors
 
 * **Alli Kruger** - *Circle Pack Creation & Interactions* 
-* **Bradley Weintraub** - *Data Wrangling* 
-* **Jason Fung** - *Data Wrangling, SQL & Chloropleth Map* 
+* **Bradley Weintraub** - *Data Wrangling & Choropleth* 
+* **Jason Fung** - *Data Wrangling, SQL & Flask App* 
 * **Richard Wendel** - *HTML & CSS*  
 
 ## License
