@@ -1,0 +1,18 @@
+
+config.py
+=======
+#Ignore Mac system files
+.DS_store
+
+#Ignore chromedriver
+chromedriver.exe
+sample_dog_data.csv
+new_sample_dog_data.csv
+breed_count_weight.csv
+borough_count.csv
+config.js
+
+
+.ipynb_checkpoints
+=======
+__pycache__/*
