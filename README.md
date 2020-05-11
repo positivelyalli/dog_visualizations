@@ -1,19 +1,3 @@
-
-# data_wrangling
-UCB Data Analytics Boot Camp, week 17 visualization group project, data wranging section
-
-Data Clean Up<br>
-This was achieved first by cleansing our NYC dog licenses data. We restricted our view to 2016, removed records with any null values in relevant fields, and normalized breed and borough names by mapping (replacing) raw values. A breed-to-breed-group relationship table and breed-stats tables were created with data primarily from the American Kennel Club and Google search results.<br>
-See: data_cleanup.ipynb
-
-SQLite Database<br>
-The licenses, breed-to-breed-group, and breed-stats CSVs were loaded into tables within a SQLite database.<br>
-See: create_sqlite_db.py, dog_data.sqlite
-
-Flask<br>
-Originally, the tables were used to create two views that could be exported as CSVs and used by the team. On recommendation from the teacher, we changed our approach to make the view-like data accessible via a flask.<br>
-See: app.py
-=======
 # Visualizing Dog Breed Popularity in NY for 2016
 
 Everyone has their favorite dog breed. This project strives to show which are the most popular breeds and breed groups in the New York City area, including all 5 boroughs. There are 2 visulazations of this data, which includes a chloropleth map of the New York area with the number of dogs indicated by the color range and a circle pack showing the number of licenses for a breed and it's AKC breed group. 
@@ -59,13 +43,22 @@ Data must be in the proper format to be able to parse it for the visualization.
 3. G Group: Select using d3 and append 'g'
 4. Get data from the csv.
 
-### Break down into end to end tests
+=======
+### Data Wrangling
+UCB Data Analytics Boot Camp, week 17 visualization group project, data wranging section
 
-Explain what these tests test and why
+Data Clean Up<br>
+This was achieved first by cleansing our NYC dog licenses data. We restricted our view to 2016, removed records with any null values in relevant fields, and normalized breed and borough names by mapping (replacing) raw values. A breed-to-breed-group relationship table and breed-stats tables were created with data primarily from the American Kennel Club and Google search results.<br>
+See: data_cleanup.ipynb
 
-```
-Give an example
-```
+SQLite Database<br>
+The licenses, breed-to-breed-group, and breed-stats CSVs were loaded into tables within a SQLite database.<br>
+See: create_sqlite_db.py, dog_data.sqlite
+
+Flask<br>
+Originally, the tables were used to create two views that could be exported as CSVs and used by the team. On recommendation from the teacher, we changed our approach to make the view-like data accessible via a flask.<br>
+See: app.py
+=======
 
 ### And coding style tests
 
