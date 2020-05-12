@@ -1,65 +1,63 @@
 // Creating map object
-var myMap = L.map("map", {
-  center: [40.7128, -74.0059],
-  zoom: 11
+var map = L.map("map", {
+  center: [40.71455, -74.00712],
+  zoom: 10.5
 });
 
 // Adding tile layer
-L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+var layer=L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
   id: "mapbox.streets",
   accessToken: API_KEY
-}).addTo(myMap);
+}).addTo(map);
+var link = "static/data/Borough Boundaries.geojson";
 
-// Load in geojson data
-// var geoData = "static/data/Median_Household_Income_2016.geojson";
-var read,csv = "static/data/NYC_b.csv";
-console.log()
-
-var geojson;
-
-// Grab data with d3
-d3.json(geoData, function(data) {
-
-  // Create a new choropleth layer
-  geojson = L.choropleth(data, {
-
-    // Define what  property in the features to use
-   //  valueProperty: "MHI2016",
-
-    // Set color scale
-    scale: ["#ffffb2", "#b10026"],
-
-    // Number of breaks in step range
-    steps: 10,
-
-    // q for quartile, e for equidistant, k for k-means
-    mode: 'q',
+d3.json(link, function(data) {
+  var geojson = L.choropleth(data, {
+    valueProperty: 'licensecount', // which property in the features to use
+    scale: ['white', 'green'], // chroma.js scale - include as many as you like
+    steps: 5, // number of breaks or steps in range
+    mode: 'q', // q for quantile, e for equidistant, k for k-means
     style: {
-      // Border color
-      color: "#fff",
+      color: 'black', // border color
       weight: 1,
       fillOpacity: 0.8
     },
-
-    // Binding a pop-up to each layer
     onEachFeature: function(feature, layer) {
-      layer.bindPopup("Zip Code: " + feature.properties.ZIP + "<br>Median Household Income:<br>" +
-        "$" + feature.properties.MHI2016);
+      layer.bindPopup(`License Count: ${feature.properties.licensecount.toString()}`);
     }
-  }).addTo(myMap);
+  }).addTo(map);
 
-  // Set up the legend
-  var legend = L.control({ position: "bottomright" });
+// markers for New York Bourghs
+var layer=L.marker([40.758896, -73.985130]).addTo(map);
+var layer=L.marker([40.650002, -73.949997]).addTo(map);
+var layer=L.marker([40.742054, -73.769417]).addTo(map);
+var layer=L.marker([40.579027, -74.151535]).addTo(map);
+var layer=L.marker([40.837048, -73.865433]).addTo(map);
+
+// L.circle([40.758896, -73.985130], {
+//   title: "Manhatten"
+//   color: "yellow",
+//   fillColor: "yellow",
+//   radius: 1000
+// }).addTo(map);
+
+// var layer=L.marker = ([40.758896, -73.985130],
+//   title: "Matthattan"
+// );
+
+
+// Set up the legend
+  var legend = L.control({position: "topleft"});
   legend.onAdd = function() {
-    var div = L.DomUtil.create("div", "info legend");
+    var div = L.DomUtil.create("div", "legend");
     var limits = geojson.options.limits;
     var colors = geojson.options.colors;
     var labels = [];
 
     // Add min & max
-    var legendInfo = "<h1>Median Income</h1>" +
+    var legendInfo = "<h1>License Counts</h1>" +
       "<div class=\"labels\">" +
         "<div class=\"min\">" + limits[0] + "</div>" +
         "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
@@ -74,8 +72,7 @@ d3.json(geoData, function(data) {
     div.innerHTML += "<ul>" + labels.join("") + "</ul>";
     return div;
   };
-
-  // Adding legend to the map
-  legend.addTo(myMap);
-
+  legend.addTo(map);
 });
+
+var latlng = L.latlng

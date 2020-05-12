@@ -1,0 +1,272 @@
+breedgroup,breedname,licensecount,avgweight
+,Dog,,
+Dog,Foundation Stock Service,,
+Dog,Herding,,
+Dog,Hound,,
+Dog,Miscellaneous,,
+Dog,Mixed,,
+Dog,Non-Sporting,,
+Dog,Sporting,,
+Dog,Terrier,,
+Dog,Toy,,
+Dog,Unknown,,
+Dog,Working,,
+Toy,Affenpinscher,17,8.5
+Hound,Afghan Hound,15,55
+Mixed,Afghan Hound Crossbreed,1,NULL
+Terrier,Airedale Terrier,41,60
+Working,Akita,75,100
+Mixed,Akita Crossbreed,27,NULL
+Working,Alaskan Malamute,39,80
+Foundation Stock Service,American Bulldog,34,80
+Non-Sporting,American Bully,129,NULL
+Hound,American English Coonhound,10,55
+Non-Sporting,American Eskimo dog,193,29
+Hound,American Foxhound,29,65
+Terrier,American Hairless Terrier,1,14
+Foundation Stock Service,American Leopard Hound,1,57.5
+Mixed,American Pit Bull Mix / Pit Bull Mix,2044,NULL
+Mixed,American Pit Bull Terrier/Pit Bull,1815,NULL
+Terrier,American Staffordshire Terrier ,484,55
+Sporting,American Water Spaniel,2,35
+Working,Anatolian Shepherd Dog,45,115
+Herding,Australian Cattle Dog,247,42.5
+Foundation Stock Service,Australian Kelpie,17,NULL
+Herding,Australian Shepherd,558,52.5
+Terrier,Australian Terrier,19,17.5
+Miscellaneous,Barbet,3,50
+Hound,Basenji,93,23
+Hound,Basset Hound,181,52.5
+Hound,Beagle,1307,25
+Mixed,Beagle Crossbreed,627,NULL
+Herding,Bearded Collie,33,50
+Terrier,Bedlington Terrier,16,20
+Herding,Belgian Malinois,64,60
+Herding,Belgian Sheepdog,14,60
+Herding,Belgian Tervuren,1,60
+Herding,Berger Picard,4,60
+Working,Bernese Mountain Dog,108,92.5
+Non-Sporting,Bichon Frise,777,15
+Mixed,Bichon Frise Crossbreed,22,NULL
+Foundation Stock Service,Biewer Terrier,3,6
+Hound,Black and Tan Coonhound,77,87.5
+Working,Black Russian Terrier,4,105
+Hound,Bloodhound,19,95
+Mixed,Bloodhound Crossbreed,3,NULL
+Hound,Bluetick Coonhound,25,67.5
+Working,Boerboel,8,175
+Foundation Stock Service,Bolognese,7,7.25
+Herding,Border Collie,403,42.5
+Mixed,Border Collie Crossbreed,34,NULL
+Terrier,Border Terrier,150,13.5
+Hound,Borzoi,10,82.5
+Non-Sporting,Boston Terrier,769,18.5
+Herding,Bouvier Des Flandres,14,90
+Working,Boxer,682,65
+Mixed,Boxer Crossbreed,36,NULL
+Sporting,Boykin Spaniel,2,32.5
+Herding,Briard,10,77.5
+Sporting,Brittany,92,35
+Toy,Brussels Griffon,219,9
+Terrier,Bull Terrier,130,60
+Non-Sporting,Bulldog,159,45
+Working,Bullmastiff,57,115
+Terrier,Cairn Terrier,341,13.5
+Herding,Canaan Dog,5,45
+Working,Cane Corso,160,NULL
+Herding,Cardigan Welsh Corgi,63,31.5
+Foundation Stock Service,Catahoula Leopard Dog,58,72.5
+Toy,Cavalier King Charles Spaniel,918,15.5
+Sporting,Chesapeake Bay Retriever,18,67.5
+Toy,Chihuahua,3594,6
+Mixed,Chihuahua Crossbreed,809,NULL
+Toy,Chinese Crested,28,10
+Non-Sporting,Chinese Shar-Pei,125,52.5
+Working,Chinook,3,70
+Non-Sporting,Chow Chow,154,57.5
+Hound,Cirneco dell,2,21.5
+Sporting,Clumber Spaniel,11,70
+Sporting,Cocker Spaniel,1110,25
+Mixed,Cocker Spaniel Crossbreed,42,NULL
+Herding,Collie,29,62.5
+Mixed,Collie Crossbreed,138,NULL
+Non-Sporting,Coton de Tulear,194,11.5
+Sporting,Curly-Coated Retriever,2,77.5
+Hound,Dachshund,354,24
+Mixed,Dachshund Crossbreed,150,NULL
+Hound,Dachshund Smooth Coat,488,NULL
+Hound,Dachshund Smooth Coat Miniature,294,NULL
+Non-Sporting,Dalmatian,60,57.5
+Terrier,Dandie Dinmont Terrier,4,21
+Working,Doberman Pinscher,163,80
+Miscellaneous,Dogo Argentino,13,94
+Miscellaneous,Dutch Shepherd,21,58.5
+Non-Sporting,English Bulldog,592,NULL
+Sporting,English Cocker Spaniel,90,30
+Hound,English Foxhound,12,67.5
+Sporting,English Setter,8,62.5
+Sporting,English Springer Spaniel,44,45
+Toy,English Toy Spaniel,5,11
+Herding,Entlebucher Mountain Dog,5,52.5
+Foundation Stock Service,Eurasier,2,55
+Sporting,Field Spaniel,5,42.5
+Working,Fila Brasileiro,2,NULL
+Herding,Finnish Lapphund,1,43
+Non-Sporting,Finnish Spitz,3,26.5
+Sporting,Flat-Coated Retriever,20,65
+Non-Sporting,French Bulldog,1317,28
+Working,French Mastiff (Dogue de Bordeaux),20,104.5
+Foundation Stock Service,French Spaniel,3,55
+Foundation Stock Service,German Longhaired Pointer,2,67.5
+Working,German Pinscher,5,35
+Mixed,German Shepherd Crossbreed,956,NULL
+Herding,German Shepherd Dog,1190,70
+Sporting,German Shorthaired Pointer,87,57.5
+Foundation Stock Service,German Spitz,7,25
+Sporting,German Wirehaired Pointer,15,60
+Working,Giant Schnauzer,24,70
+Terrier,Glen of Imaal Terrier,9,36
+Sporting,Golden Retriever,1196,65
+Mixed,Goldendoodle,336,NULL
+Sporting,Gordon Setter,7,62.5
+Hound,Grand Basset Griffon Vendeen,1,42.5
+Working,Great Dane,77,142.5
+Working,Great Pyrenees,49,92.5
+Working,Greater Swiss Mountain Dog,6,112.5
+Hound,Greyhound,143,65
+Foundation Stock Service,Hamiltonstovare,1,57.5
+Hound,Harrier,8,52.5
+Toy,Havanese,1325,10
+Hound,Ibizan Hound,9,47.5
+Sporting,Irish Red and White Setter,1,47.5
+Sporting,Irish Setter,22,65
+Terrier,Irish Terrier,38,26
+Hound,Irish Wolfhound,12,112.5
+Toy,Italian Greyhound,188,10.5
+Terrier,Jack Russell Terrier,1276,NULL
+Toy,Japanese Chin,29,9
+Mixed,Japanese Chin/Spaniel,55,NULL
+Foundation Stock Service,Jindo,36,40
+Foundation Stock Service,Karelian Bear Dog,1,46.5
+Non-Sporting,Keeshond,17,40
+Terrier,Kerry Blue Terrier,9,36.5
+Sporting,Kooikerhondje,5,25
+Foundation Stock Service,Kromfohrlander,2,27.5
+Working,Kuvasz,4,92.5
+Mixed,Labradoodle,517,NULL
+Sporting,Labrador Retriever,2545,67.5
+Mixed,Labrador Retriever Crossbreed,1723,NULL
+Sporting,Lagotto Romagnolo,19,29.5
+Terrier,Lakeland Terrier,3,17
+Working,Leonberger,4,130
+Non-Sporting,Lhasa Apso,482,15
+Hound,Long Haired Dachshund,117,NULL
+Hound,Long Haired Miniature Dachshund,168,NULL
+Non-Sporting,Lowchen,4,12.5
+Toy,Maltese,2654,7
+Mixed,Maltese Crossbreed,503,NULL
+Mixed,Maltipoo,224,NULL
+Terrier,Manchester Terrier,19,17
+Working,Mastiff,36,175
+Herding,Miniature American Shepherd,93,30
+Terrier,Miniature Bull Terrier,7,23
+Mixed,Miniature Crossbreed Schnauzer,28,NULL
+Terrier,Miniature Fox Terrier,2,NULL
+Toy,Miniature Pinscher,533,9
+Non-Sporting,Miniature Poodle,780,12.5
+Terrier,Miniature Schnauzer,930,15.5
+Mixed,Morkie,291,NULL
+Miscellaneous,Mudi,2,23.5
+Working,Neapolitan Mastiff,13,130
+Working,Newfoundland,41,125
+Terrier,Norfolk Terrier,54,11.5
+Herding,Norwegian Buhund,1,33
+Hound,Norwegian Elkhound,17,51.5
+Terrier,Norwich Terrier,69,12
+Unknown,Not Listed,10383,NULL
+Sporting,Nova Scotia Duck Tolling Retriever,9,42.5
+Working,Old English Mastiff,18,NULL
+Herding,Old English Sheepdog,40,60
+Hound,Otterhound,1,97.5
+Toy,Papillon,267,7.5
+Terrier,Parson Russell Terrier,34,15
+Toy,Pekingese,368,14
+Herding,Pembroke Welsh Corgi,266,29
+Mixed,Pembroke Welsh Corgi Crossbreed,9,NULL
+Foundation Stock Service,Perro de Presa Canario,6,97
+Hound,Petit Basset Griffon Vendeen,18,32.5
+Hound,Pharaoh Hound,26,50
+Hound,Plott,34,50
+Sporting,Pointer,128,60
+Hound,Polish Hound,2,NULL
+Herding,Polish Lowland Sheepdog,3,40
+Toy,Pomeranian,1361,5
+Mixed,Pomeranian Crossbreed,130,NULL
+Non-Sporting,Poodle,1164,55
+Mixed,Poodle Crossbreed,612,NULL
+Hound,Portuguese Podengo Pequeno,9,11
+Working,Portuguese Water Dog,102,47.5
+Toy,Pug,966,16
+Mixed,Pug Crossbreed,42,NULL
+Mixed,Puggle,489,NULL
+Herding,Puli,16,30
+Herding,Pumi,2,25.5
+Herding,Pyrenean Shepherd,2,22.5
+Terrier,Rat Terrier,205,17.5
+Mixed,Rat Terrier Crossbreed,8,NULL
+Hound,Redbone Coonhound,23,57.5
+Hound,Rhodesian Ridgeback,145,77.5
+Working,Rottweiler,392,107.5
+Mixed,Rottweiler Crossbreed,42,NULL
+Herding,Rough Coat Collie,28,NULL
+Terrier,Russell Terrier,14,12
+Miscellaneous,Russian Toy,1,6.5
+Hound,Saluki,5,52.5
+Working,Samoyed,59,50
+Non-Sporting,Schipperke,32,13
+Mixed,Schnauzer Crossbreed,78,NULL
+Hound,Scottish Deerhound,3,92.5
+Terrier,Scottish Terrier,101,20
+Terrier,Sealyham Terrier,3,23.5
+Herding,Shetland Sheepdog,192,20
+Non-Sporting,Shiba Inu,884,20
+Mixed,Shiba Inu Crossbreed,8,NULL
+Toy,Shih Tzu,4500,12.5
+Mixed,Shih Tzu Crossbreed,887,NULL
+Working,Siberian Husky,750,47.5
+Mixed,Siberian Husky Crossbreed,59,NULL
+Toy,Silky Terrier,205,10
+Terrier,Skye Terrier,6,40
+Herding,Smooth Coat Collie,24,NULL
+Terrier,Smooth Fox Terrier,12,16.5
+Terrier,Soft Coated Wheaten Terrier,36,35
+Herding,Spanish Water Dog,2,40
+Sporting,Spinone Italiano,11,NULL
+Working,St. Bernard,24,150
+Terrier,Staffordshire Bull Terrier,174,31
+Working,Standard Schnauzer,118,40
+Sporting,Sussex Spaniel,3,40
+Herding,Swedish Vallhund,1,27.5
+Mixed,Terrier Crossbreed,748,NULL
+Foundation Stock Service,Thai Ridgeback,3,55
+Working,Tibetan Mastiff,6,110
+Non-Sporting,Tibetan Spaniel,42,12
+Non-Sporting,Tibetan Terrier,150,24
+Toy,Toy Fox Terrier,25,5.25
+Toy,Toy Poodle,817,5
+Foundation Stock Service,Treeing Tennessee Brindle,2,40
+Hound,Treeing Walker Coonhound,53,60
+Sporting,Vizsla,144,52
+Sporting,Weimaraner,84,72.5
+Sporting,Welsh Springer Spaniel,11,45
+Terrier,Welsh Terrier,18,20
+Terrier,West Highland White Terrier,455,17.5
+Terrier,Wheaton Terrier,273,35
+Hound,Whippet,88,32.5
+Terrier,Wire Fox Terrier,100,16.5
+Hound,Wirehaired Dachshund,39,NULL
+Hound,Wirehaired Miniature Dachshund,46,NULL
+Sporting,Wirehaired Pointing Griffon,7,52.5
+Non-Sporting,Xoloitzcuintli,5,42.5
+Toy,Yorkshire Terrier,4929,7
+Mixed,Yorkshire Terrier Crossbreed,553,NULL
