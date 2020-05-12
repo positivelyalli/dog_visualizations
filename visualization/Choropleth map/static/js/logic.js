@@ -11,7 +11,7 @@ var layer=L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?acce
   id: "mapbox.streets",
   accessToken: API_KEY
 }).addTo(map);
-var link = ".vizualization/Choropleth map/static/data/Borough Boundaries.geojson";
+var link = "C:\Users\positivelyalli\Desktop\dog_visualizations\visualization\Choropleth map\static\js\Borough_Boundaries.geojson";
 
 d3.json(link, function(data) {
   var geojson = L.choropleth(data, {
