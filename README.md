@@ -43,6 +43,10 @@ Data must be in the proper format to be able to parse it for the visualization.
 3. G Group: Select using d3 and append 'g'
 4. Get data from the source: csv, json, API.
 5. Pass the data to stratify which creates heirarchies in the data.
+  * Assign parent and child columns
+5. If data is in a CSV Pass the data to stratify which creates hierarchies in the data.
+6. If data is another format use the unpack function to display the data.
+
 
 =======
 ### Data Wrangling
