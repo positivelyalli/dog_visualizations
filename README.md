@@ -2,36 +2,6 @@
 
 Everyone has their favorite dog breed. This project strives to show which are the most popular breeds and breed groups in the New York City area, including all 5 boroughs. There are 2 visulazations of this data, which includes a chloropleth map of the New York area with the number of dogs indicated by the color range and a circle pack showing the number of licenses for a breed and it's AKC breed group. 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ### Circle Pack
 
 #### Prerequisites
