@@ -14,7 +14,7 @@ var g = d3.select('#circle_chart svg')
 
 // Get the data from our CSV file
 function fetchDogData() {
-    d3.csv("dogbreed_circlepack/data/updated_breed_count_weight.csv").then(function (dogData, error) {
+    d3.csv("data/updated_breed_count_weight.csv").then(function (dogData, error) {
         if (error) throw error;
         childColumn = dogData.columns[1];
         parentColumn = dogData.columns[0];
