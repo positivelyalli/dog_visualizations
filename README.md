@@ -16,9 +16,8 @@ Data must be in the proper format to be able to parse it for the visualization.
     * Assign parent and child columns
 5. If data is in a CSV Pass the data to stratify which creates hierarchies in the data.
 6. If data is another format use the unpack function to display the data.
+7. Create circle pack.
 
-
-=======
 ### Data Wrangling
 UCB Data Analytics Boot Camp, week 17 visualization group project, data wranging section
 
