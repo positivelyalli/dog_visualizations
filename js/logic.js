@@ -55,6 +55,9 @@ d3.select("#view-by").selectAll('div').selectAll('a')
         // @global vData
         updateViz(vData, view);
         updateText(view);
+
+        //take away the text box for breed selection
+        svg.selectAll("#details-popup").remove();
     });
 
 function getFilteredData(vData, filter) {
@@ -89,6 +92,9 @@ d3.select("#group_filter").selectAll('div').selectAll('a')
     // // @global vData
     updateViz(filteredData, view);
     // updateText(view);
+    
+    //take away the text box for breed selection
+    svg.selectAll("#details-popup").remove();
 });
 
 function updateViz(vData, view) {
