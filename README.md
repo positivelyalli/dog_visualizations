@@ -32,21 +32,6 @@ See: create_sqlite_db.py, dog_data.sqlite
 Flask<br>
 Originally, the tables were used to create two views that could be exported as CSVs and used by the team. On recommendation from the teacher, we changed our approach to make the view-like data accessible via a flask.<br>
 
-See: app.py
-=======
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
 * [Bootstrap](link to download here) - The web framework used
